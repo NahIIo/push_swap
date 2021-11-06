@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 15:18:43 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 15:27:51 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:32:57 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 void	sort(t_stack *a, t_stack *b)
 {
-		if (!is_sorted(a, b))
-		{
-			if (a->top < 20)
-				sort_few_nbrs(a, b);
-			else
-				sort_many_nbrs(a, b);
-		}
+	if (!is_sorted(a, b))
+	{
+		if (a->top < 20)
+			sort_few_nbrs(a, b);
+		else
+			sort_many_nbrs(a, b);
+	}
 }
 
 void	free_all(t_stack *a, t_stack *b, char **nbrs)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	free(a->items);

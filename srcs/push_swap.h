@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:00 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 15:28:53 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:32:18 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ typedef struct s_stack
 	int		*items;
 }				t_stack;
 
-void	free_all(t_stack *a, t_stack *b, char **nbrs);
-void	sort(t_stack *a, t_stack *b);
-void	sort_few_nbrs(t_stack *a, t_stack *b);
+void		free_all(t_stack *a, t_stack *b, char **nbrs);
+void		sort(t_stack *a, t_stack *b);
+void		sort_few_nbrs(t_stack *a, t_stack *b);
 char		**get_nbrs(char **av, int ac);
 t_stack		*initialize(int size);
 void		fill(t_stack *stack, char **ints);
