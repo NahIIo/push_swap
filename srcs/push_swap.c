@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:04 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 15:22:28 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:29:07 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int	are_sorted(t_stack *a, t_stack *b)
 	return (1);
 }
 
-static void	sort_few_nbrs(t_stack *a, t_stack *b)
+void	sort_few_nbrs(t_stack *a, t_stack *b)
 {
 	while (a->top > 1 && !are_sorted(a, b))
 	{
@@ -126,13 +126,7 @@ int	main(int ac, char **av)
 		a = initialize(size);
 		fill(a, nbrs);
 		b = initialize(size);
-		if (!is_sorted(a, b))
-		{
-			if (a->top < 20)
-				sort_few_nbrs(a, b);
-			else
-				sort_many_nbrs(a, b);
-		}
+		sort(a, b);
 	}
 	else
 		return (0);
