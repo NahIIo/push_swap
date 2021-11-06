@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:12 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 15:05:24 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 16:34:49 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	reverse_rotate_stacks(t_stack *b, t_stack *a, int items[2],
 	{
 		reverse_rotate(b);
 		reverse_rotate(a);
-		write(1, "rrr\n", 5);
+		write(1, "rrr\n", 4);
 	}
 	while (places[0] <= (b->top - 1) / 2 && b->items[b->top - 1] != items[0])
 	{
