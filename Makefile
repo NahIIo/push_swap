@@ -5,68 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: Julian <Julian@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/04 10:00:04 by Julian            #+#    #+#              #
-#    Updated: 2021/11/04 10:12:56 by Julian           ###   ########.fr        #
+#    Created: 2021/11/06 14:05:04 by Julian            #+#    #+#              #
+#    Updated: 2021/11/06 14:05:24 by Julian           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-GREEN = \033[38;5;2m
-NORMAL = \033[38;5;255m
-RED = \033[38;5;1m
-BLUE = \033[38;5;4m
+NAME = project
 
-SRCS	=	main.c \
-			parse_args.c \
-			sort.c \
-			sort_mini.c \
-			sort_insertion.c \
-			sort_simple.c \
-			helpers_input.c \
-			helpers_lst.c \
-			helpers_stack.c \
-			./operations/swap.c \
-			./operations/push.c \
-			./operations/rotate.c \
-			./operations/rev_rotate.c \
-			print_stacks.c \
+SRCS = srcs/get_nbrs.c srcs/swap.c srcs/pop.c
 
-OBJS	= $(SRCS:.c=.o)
 
-NAME	= push_swap
+all: $(NAME)
 
-GCC		= gcc
+push_swap:
+	make -C libft
+	gcc srcs/push_swap.c srcs/sort_b.c srcs/get_groups.c srcs/has_members.c \
+		srcs/sort_a.c $(SRCS) -L. libft/libft.a -o push_swap
 
-FLAGS	= -Wall -Wextra -Werror -fsanitize=address -g
-
-HEADER_FILE = push_swap.h
-
-LIBFT_DIR = libft
-
-LIBFT_LIB = libft.a
-
-all:	$(NAME)
-
-$(NAME):	$(OBJS)
-	$(MAKE) bonus -C $(LIBFT_DIR)
-	$(GCC) $(FLAGS) -o $(NAME) $(OBJS) $(LIBFT_DIR)/$(LIBFT_LIB)
-
-%.o: %.c $(HEADER_FILE)
-	@echo "$(GREEN)Compiling:$(NORMAL)"
-	$(GCC) -c $< -o $(<:.c=.o)
-	@echo "$(GREEN)Successfully compiled!$(NORMAL)"
+$(NAME): push_swap
 
 clean:
-	@echo "$(RED)Removing all object files...$(NORMAL)"
-	rm -f $(OBJS)
-	make -C $(LIBFT_DIR) clean
-	@echo "$(GREEN)Succesfully removed all object files!$(NORMAL)"
+	/bin/rm -f *.o
+	make clean -C libft
 
 fclean: clean
-	@echo "$(RED)Removing libraries...$(NORMAL)"
-	rm -f $(NAME)
-	make -C $(LIBFT_DIR) fclean
-	@echo "$(GREEN)Successfully removed libraries!$(NORMAL)"
+	/bin/rm -f push_swap
+	make fclean -C libft
 
 re: fclean all
-
-.PHONY:	clean fclean re

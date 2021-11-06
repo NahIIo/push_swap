@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:21:06 by hbaddrul          #+#    #+#             */
-/*   Updated: 2021/11/04 10:13:29 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/04 12:27:38 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ char	*ft_itoa_base(int n, int base);
 void	ft_exit_basic(char *msg);
 void	ft_lstfree(t_list **ptr_lst);
 void	ft_lstfree_w_content(t_list **ptr_lst);
-
-
+char	*ft_strtrim(const char *s1, const char *set);
 
 #endif
