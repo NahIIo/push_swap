@@ -6,7 +6,7 @@
 #    By: Julian <Julian@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/06 14:05:04 by Julian            #+#    #+#              #
-#    Updated: 2021/11/06 14:05:24 by Julian           ###   ########.fr        #
+#    Updated: 2021/11/06 14:08:17 by Julian           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ all: $(NAME)
 
 push_swap:
 	make -C libft
-	gcc srcs/push_swap.c srcs/sort_b.c srcs/get_groups.c srcs/has_members.c \
+	gcc -Wall -Werror -Wextra -fsanitize=address srcs/push_swap.c srcs/sort_b.c srcs/get_groups.c srcs/has_members.c \
 		srcs/sort_a.c $(SRCS) -L. libft/libft.a -o push_swap
 
 $(NAME): push_swap
