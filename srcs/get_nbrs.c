@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:17 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 12:41:54 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:11:14 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,9 @@ t_stack	*initialize(int size)
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	items = (int *)malloc(sizeof(int) * size);
 	if (!stack || !items)
+	{
 		handle_error();
+	}
 	stack->items = items;
 	stack->max_size = size;
 	stack->top = 0;

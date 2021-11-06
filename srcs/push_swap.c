@@ -6,7 +6,7 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:04 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 14:00:22 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:12:17 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,9 @@ int	main(int ac, char **av)
 	}
 	else
 		return (0);
+	free(a->items);
+	free(a);
+	free(b->items);
+	free(b);
 	return (0);
 }

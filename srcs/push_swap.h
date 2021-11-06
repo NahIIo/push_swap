@@ -6,14 +6,22 @@
 /*   By: Julian <Julian@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:49:00 by Julian            #+#    #+#             */
-/*   Updated: 2021/11/06 14:00:15 by Julian           ###   ########.fr       */
+/*   Updated: 2021/11/06 15:12:11 by Julian           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "../libft/libft.h"
+# include "../libft/inc/ft_conv.h"
+# include "../libft/inc/ft_ctype.h"
+# include "../libft/inc/ft_list.h"
+# include "../libft/inc/ft_norm.h"
+# include "../libft/inc/ft_sort.h"
+# include "../libft/inc/ft_stdio.h"
+# include "../libft/inc/ft_stdlib.h"
+# include "../libft/inc/ft_string.h"
+# include "../libft/inc/ft_tree.h"
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
